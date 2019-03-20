@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'test'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    archiveClassifier = 'javadoc'
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}

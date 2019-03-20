@@ -1,0 +1,18 @@
+package test.annotation;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.PACKAGE;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+@Target({ TYPE, PACKAGE })
+@Retention(RUNTIME)
+public @interface NamedQuery {
+
+    String name();
+
+    String query();
+
+}
